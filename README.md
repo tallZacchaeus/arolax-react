@@ -5,7 +5,6 @@ Lagos, Nigeria.
 
 ```bash
 npm install
-npm run fetch:video   # optional hero showreel — see Assets below
 npm run dev           # http://localhost:5173
 ```
 
@@ -50,7 +49,7 @@ them:
 ## Assets and licensing — read before deploying
 
 `public/assets/` still contains **CrowdyTheme's demo photography and video**
-from the original theme. They are placeholders so the build renders during
+from the original theme, including the 12 MB hero showreel. They are placeholders so the build renders during
 development, and they are **not licensed for production use**. Replace them
 with Brandfirst Media's own imagery before launch.
 

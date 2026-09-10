@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "fetch:video": "curl -sSL --http1.1 --retry 5 --retry-all-errors -C - -o public/assets/hero-video.mp4 https://crowdytheme.com/assets/wp-content/uploads/2024/06/arolux-branding-agency-video.mp4 && echo 'hero-video.mp4 downloaded'"
+    "preview": "vite preview"
   },
   "dependencies": {
     "gsap": "^3.13.0",
