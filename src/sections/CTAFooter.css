@@ -8,9 +8,11 @@
 }
 .cta__line {
   font-family: var(--font-hero); font-weight: 400;
-  font-size: 150px; line-height: 1em; color: var(--ink);
-  max-width: 947px;
+  font-size: 88px; line-height: 1.05em; color: var(--ink);
+  max-width: 900px;
 }
-@media (max-width: 1366px) { .cta__line { font-size: 110px; } }
-@media (max-width: 1024px) { .cta__line { font-size: 80px; } .cta__eyebrow { font-size: 24px; } }
-@media (max-width: 767px)  { .cta { padding-top: 84px; } .cta__line { font-size: 48px; } .cta__eyebrow { font-size: 18px; } }
+@media (max-width: 1366px) { .cta__line { font-size: 68px; } }
+@media (max-width: 1024px) { .cta__line { font-size: 52px; } }
+@media (max-width: 767px)  { .cta { padding-top: 84px; } .cta__line { font-size: 34px; } .cta__body { font-size: 16px; } }
+
+.cta__body { max-width: 620px; font-size: 19px; line-height: 1.6em; color: var(--muted); }

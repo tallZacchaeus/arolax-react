@@ -6,10 +6,10 @@ import Services from '../sections/Services';
 import ProcessSteps from '../sections/ProcessSteps';
 import ShowcaseImage from '../sections/ShowcaseImage';
 import Testimonials from '../sections/Testimonials';
-import Team from '../sections/Team';
 import Journal from '../sections/Journal';
 import CTAFooter from '../sections/CTAFooter';
 
+// Team is omitted: the Brandfirst content document has no team content.
 // Sections 2 and 3 pin at "bottom bottom-=150" in the demo; the rest at "bottom bottom".
 const PIN_OFFSETS = { 1: 150, 2: 150 };
 
@@ -26,7 +26,6 @@ export default function Home() {
       <ProcessSteps />
       <ShowcaseImage />
       <Testimonials />
-      <Team />
       <Journal />
       <CTAFooter />
     </main>

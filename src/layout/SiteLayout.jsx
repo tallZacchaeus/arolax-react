@@ -15,10 +15,7 @@ export default function SiteLayout() {
   // Inner pages sit on a light ground and use the in-flow header (#7259)
   // and the CTA-led footer (#558).
   const isHome = pathname === '/';
-  // Portfolio Details (#4725) opens on a dark hero, so it takes the dark
-  // header (#6033); header and hero then read as one continuous surface.
-  const isDark = pathname.startsWith('/work/');
-  const variant = isHome ? 'overlay' : isDark ? 'dark' : 'inner';
+  const variant = isHome ? 'overlay' : 'inner';
 
   return (
     <>

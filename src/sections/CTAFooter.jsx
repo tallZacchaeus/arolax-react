@@ -1,19 +1,21 @@
-import { useTextReveal } from '../hooks/useGsap';
+import { Link } from 'react-router-dom';
+import { useTextReveal, useFadeIn } from '../hooks/useGsap';
+import { home } from '../data/site';
 import '../styles/section.css';
 import './CTAFooter.css';
 
-/** Section 10 — bg #D8E9E4, padding 147/20, centred.
- *  "Have a project in mind?" @30px · "Let's work together" @150px (947px) · button */
+/** Home closing CTA — content document "Ready to Put Your Brand First?" */
 export default function CTAFooter() {
   const eyebrow = useTextReveal({ by: 'words' });
-  const line = useTextReveal({ by: 'chars', stagger: 0.04 });
+  const body = useFadeIn();
+  const { cta } = home;
   return (
     <section className="sec cta">
       <div className="sec__inner">
         <div className="cta__col">
-          <p ref={eyebrow} className="cta__eyebrow">Have a project in mind?</p>
-          <h2 ref={line} className="cta__line">Let&rsquo;s work together</h2>
-          <a className="btn btn--primary" href="/contact">Get in touch</a>
+          <h2 ref={eyebrow} className="cta__line">{cta.headline}</h2>
+          <p ref={body} className="cta__body">{cta.body}</p>
+          <Link className="btn btn--primary" to={cta.button.href}>{cta.button.label}</Link>
         </div>
       </div>
     </section>

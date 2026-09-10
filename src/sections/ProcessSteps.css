@@ -1,34 +1,15 @@
-/* Section 5 — bg #D8E9E4. Head row: title 520px + floating image 40.5%.
-   Steps laid out as a 5-column grid with decorative half-circles. */
+/* Home "Why Brandfirst Media". Keeps Elementor section 5's mint ground. */
 .process { background: var(--sec-mint); overflow: hidden; }
-.process__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
-.process__title { max-width: 520px; line-height: 1.1em; }
-.process__float { width: 40.5%; }
-.process__grid {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-  align-items: center; gap: 0;
-}
-.process__deco { align-self: flex-end; max-width: 100%; }
-.process__step {
-  width: 100%;
-  display: flex; flex-direction: column; row-gap: 288px;
-  padding: 0 12px;
-}
-.process__label { font-size: 16px; line-height: 1em; color: var(--step-label); }
-.process__name {
-  font-family: var(--font-display); font-weight: 400;
-  font-size: 30px; line-height: 1.2em; color: var(--ink);
-}
-@media (max-width: 1366px) { .process__step { row-gap: 180px; } }
-@media (max-width: 1024px) {
-  .process__grid { grid-template-columns: repeat(2, 1fr); gap: 48px 24px; }
-  .process__deco { display: none; }
-  .process__step { row-gap: 64px; padding: 0; }
-}
+.process__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 60px; }
+.process__title { max-width: 620px; line-height: 1.1em; }
+.process__body { max-width: 480px; font-size: 18px; line-height: 1.66em; color: var(--muted); }
+.process__highlights { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.process__highlight { display: flex; flex-direction: column; gap: 14px; padding-top: 22px; border-top: 1px solid rgba(18,18,18,.18); }
+.process__hn { font-size: 13px; letter-spacing: .08em; color: var(--muted); }
+.process__ht { font-family: var(--font-display); font-weight: 400; font-size: 21px; line-height: 1.3em; color: var(--ink); }
+@media (max-width: 1200px) { .process__highlights { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
 @media (max-width: 767px) {
-  .process__head { flex-direction: column; }
-  .process__float { width: 100%; }
-  .process__grid { grid-template-columns: 1fr; gap: 36px; }
-  .process__step { row-gap: 20px; }
-  .process__name { font-size: 24px; }
+  .process__head { flex-direction: column; gap: 24px; }
+  .process__highlights { grid-template-columns: 1fr; }
+  .process__ht { font-size: 18px; }
 }

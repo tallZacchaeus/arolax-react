@@ -1,27 +1,22 @@
-import { useTextReveal, useImageReveal } from '../hooks/useGsap';
+import { useTextReveal, useFadeIn } from '../hooks/useGsap';
+import { home } from '../data/site';
 import '../styles/section.css';
 import './StatsIntro.css';
 
-/** Section 3 — bg #D9DCED, radius 80, overlap -100.
- *  lead 865px @70px/1.1 · row 76.3% (line image + "150" @450px, col 62.8%) */
+/** Home "Intro" section — content document: "Strategic Media Solutions for
+ *  Brands That Want to Grow". Uses Elementor section 3's layout. */
 export default function StatsIntro() {
-  const copy = useTextReveal({ by: 'words' });
-  const line = useImageReveal();
-  const figure = useTextReveal({ by: 'chars', stagger: 0.08 });
+  const title = useTextReveal({ by: 'words' });
+  const body = useFadeIn();
+  const { intro } = home;
   return (
     <section className="sec stats">
       <div className="sec__inner">
         <div className="stats__lead">
-          <p ref={copy} className="stats__copy">
-            Designing great products is so hard. But we&rsquo;ve done more than
-            150 of them in this year.
-          </p>
+          <h2 ref={title} className="stats__copy">{intro.headline}</h2>
         </div>
-        <div className="stats__row">
-          <img ref={line} className="stats__line" src="/assets/line-img.webp" alt="" aria-hidden />
-          <div className="stats__figure-col">
-            <span ref={figure} className="stats__figure">150</span>
-          </div>
+        <div ref={body} className="stats__body">
+          {intro.body.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@
 
 .footer__top { display: flex; padding: 0 20px; }
 .footer__brand { width: 37.7%; padding: 130px 0 90px; }
-.footer__logo img { height: 36px; width: auto; }
+.footer__wordmark { font-family: var(--font-hero); font-size: 30px; line-height: 1; color: var(--paper); }
 .footer__blurb {
   margin-top: 28px; max-width: 320px;
   font-size: 18px; line-height: 1.44em; color: var(--muted-2);
@@ -24,7 +24,7 @@
 
 .footer__cols {
   width: 62.3%; padding: 130px 0 90px;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
 }
 .footer__col-title {
   font-family: var(--font-display); font-weight: 400;
@@ -51,6 +51,8 @@
 .footer__copy strong { color: var(--paper); font-weight: 400; }
 
 @media (max-width: 1200px) { .footer__cols { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; } }
+.footer__place { font-size: 18px; color: var(--muted-2); }
+.footer__copy { max-width: none; }
 @media (max-width: 1024px) {
   .footer__top { flex-direction: column; }
   .footer__brand, .footer__cols { width: 100%; }

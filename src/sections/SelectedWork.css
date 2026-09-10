@@ -95,3 +95,16 @@
   .work__foot { width: 100%; padding-top: 48px; row-gap: 28px; }
   .work__note { font-size: 18px; }
 }
+
+/* Case-study placeholders — no imagery until approved client work exists. */
+.work__grid--cases { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
+.case {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 42px 40px; border: 1px solid rgba(18,18,18,.14); border-radius: 20px;
+  transition: background .35s ease, border-color .35s ease;
+}
+.case:hover { background: var(--tint-grey); border-color: transparent; }
+.case__sector { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.case__title { font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: 1.25em; color: var(--ink); }
+.case__soon { font-size: 14px; color: var(--muted-2); }
+@media (max-width: 767px) { .work__grid--cases { grid-template-columns: 1fr; } .case { padding: 30px 26px; } .case__title { font-size: 22px; } }

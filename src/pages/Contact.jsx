@@ -1,46 +1,64 @@
 import PageHero from '../components/PageHero';
 import { useFadeIn } from '../hooks/useGsap';
+import { contact, site, services } from '../data/site';
 import '../styles/page.css';
 import './Contact.css';
 
-/** Page #2474 "Contact Us" — 3 sections, 15 widgets.
- *  Copy, phone, email, Skype handle and address are the demo's own values. */
+/** Contact page — content document copy and its seven specified form fields.
+ *  Phone and email are left blank because the document marks them
+ *  "[Add phone number]" / "[Add email address]". */
 export default function Contact() {
   const form = useFadeIn();
   return (
     <main className="page">
       <div className="page__inner">
-        <PageHero
-          eyebrow="We’ve been waiting for you!"
-          title="Any questions? simply ask us this is you home!"
-          lede="Add the best talent on the market, an agile skilled management and seamless involvement."
-        />
+        <PageHero title={contact.hero.headline} lede={contact.hero.sub} />
 
         <div className="contact">
           <aside className="contact__aside">
-            <h2 className="contact__label">Direct contact:</h2>
-            <a className="contact__line" href="tel:+8817506606 00">+881 750 6606 00</a>
-            <a className="contact__line" href="mailto:hello@arolax.com">hello@arolax.com</a>
-            <p className="contact__skype">Skype.arolax007</p>
-            <p className="contact__addr">230 alaska street dunasia QC (USA) H8R 1A1</p>
+            <h2 className="contact__label">Office</h2>
+            <p className="contact__addr">{site.location}</p>
+
+            {site.phone && <a className="contact__line" href={`tel:${site.phone}`}>{site.phone}</a>}
+            {site.email && <a className="contact__line" href={`mailto:${site.email}`}>{site.email}</a>}
+            {!site.phone && !site.email && (
+              <p className="contact__pending">Phone and email to be confirmed.</p>
+            )}
+
+            <h2 className="contact__label contact__label--gap">Social</h2>
+            {site.social.map((s) => (
+              <a key={s.label} className="contact__line" href={s.href} target="_blank" rel="noreferrer">{s.label}</a>
+            ))}
           </aside>
 
           <form ref={form} className="contact__form" onSubmit={(e) => e.preventDefault()}>
-            <h2 className="contact__heading">We want to hear from you. let’s us know how we can help!</h2>
+            <p className="contact__intro">{contact.body}</p>
+            <div className="contact__row">
+              <Field label="Name" name="name" required />
+              <Field label="Company or organization" name="company" />
+            </div>
+            <div className="contact__row">
+              <Field label="Email address" name="email" type="email" required />
+              <Field label="Phone number" name="phone" type="tel" />
+            </div>
             <div className="contact__row">
               <label className="contact__field">
-                <span>Name</span>
-                <input type="text" name="name" required />
+                <span>Service interest</span>
+                <select name="service" defaultValue="">
+                  <option value="" disabled>Select a service</option>
+                  {services.map((s) => <option key={s.slug} value={s.slug}>{s.title}</option>)}
+                </select>
               </label>
               <label className="contact__field">
-                <span>Email</span>
-                <input type="email" name="email" required />
+                <span>Project budget range</span>
+                <select name="budget" defaultValue="">
+                  <option value="" disabled>Select a range</option>
+                  <option>Under ₦1M</option><option>₦1M – ₦5M</option>
+                  <option>₦5M – ₦20M</option><option>Above ₦20M</option>
+                  <option>Not yet defined</option>
+                </select>
               </label>
             </div>
-            <label className="contact__field">
-              <span>Subject</span>
-              <input type="text" name="subject" />
-            </label>
             <label className="contact__field">
               <span>Message</span>
               <textarea name="message" rows={5} required />
@@ -50,5 +68,14 @@ export default function Contact() {
         </div>
       </div>
     </main>
+  );
+}
+
+function Field({ label, name, type = 'text', required = false }) {
+  return (
+    <label className="contact__field">
+      <span>{label}</span>
+      <input type={type} name={name} required={required} />
+    </label>
   );
 }
