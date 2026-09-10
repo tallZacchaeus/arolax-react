@@ -18,7 +18,12 @@ import './HeroVideo.css';
  * toggles sound and pause, which is what the play control means once the
  * video is already visible.
  */
-export default function HeroVideo({ src = '/assets/hero-video.mp4' }) {
+/* `?v=2` is a deliberate cache key, not decoration. An earlier vercel.json
+   served the SPA fallback HTML at this URL with `immutable, max-age=31536000`
+   while the file was gitignored. `immutable` means affected browsers never
+   revalidate, so they would show a dead hero for a year. A new query string is
+   a new cache entry, which routes them past the poisoned one. */
+export default function HeroVideo({ src = '/assets/hero-video.mp4?v=2' }) {
   const video = useRef(null);
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
