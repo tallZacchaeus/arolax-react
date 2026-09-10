@@ -1,0 +1,38 @@
+/* Template #6518 "Search Page" — boxed 1290, padding 100/20.
+   wcf--blog--search--form · search--query centred @60px ·
+   result-message @30px · arolax--posts grid. */
+.search { padding: 100px 0 150px; }
+.search__form {
+  display: flex; align-items: center; gap: 12px;
+  max-width: 680px; margin: 0 auto 60px;
+  border-bottom: 1px solid rgba(18,18,18,.2);
+}
+.search__form input {
+  flex: 1; border: 0; background: none; padding: 16px 0;
+  font: inherit; font-size: 20px; color: var(--ink);
+}
+.search__form input:focus { outline: none; }
+.search__form input::placeholder { color: var(--muted-2); }
+.search__form button {
+  font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
+}
+.search__query {
+  text-align: center; font-family: var(--font-display); font-weight: 400;
+  font-size: 60px; line-height: 1.1em; color: var(--ink);
+}
+.search__message {
+  text-align: center; font-size: 30px; line-height: 1.35em;
+  color: var(--muted); margin-top: 16px;
+}
+.search__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 80px; }
+@media (max-width: 1024px) {
+  .search__query { font-size: 40px; }
+  .search__message { font-size: 22px; }
+  .search__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .search { padding: 64px 0 90px; }
+  .search__query { font-size: 28px; }
+  .search__message { font-size: 18px; }
+  .search__grid { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
+}

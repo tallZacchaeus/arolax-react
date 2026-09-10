@@ -1,0 +1,103 @@
+/* Elementor template #13 "Header".
+   container: position absolute, z-index 2, boxed 1720, padding 32/20, row, align center
+   columns:   logo 20% · nav 60% · action 20% (flex-end) */
+.header { padding: 32px 20px; }
+
+/* #13 — floats over the lime hero */
+.header--overlay {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+}
+/* #6033 — dark page header: #121212 ground, white nav, columns 20/60/20 */
+.header--dark {
+  position: relative; background: var(--sec-dark); padding: 32px 20px;
+}
+.header--dark .nav__link,
+.header--dark .header__burger span,
+.header--dark .header__burger span::before,
+.header--dark .header__burger span::after { color: var(--paper); background-color: var(--paper); }
+.header--dark .nav__link { background: none; color: var(--paper); }
+.header--dark .btn--primary { background: var(--paper); color: var(--ink); }
+.header--dark .btn--primary:hover { background: var(--lime); color: var(--ink); }
+@media (max-width: 1024px) {
+  .header--dark .header__nav-col.is-open { background: var(--sec-dark-card); }
+  .header--dark .header__nav-col.is-open .nav__sub a { color: var(--muted-2); }
+}
+
+/* #7259 — in flow on inner pages: padding 29, columns 15/70/15 */
+.header--inner { position: relative; padding: 29px 20px; background: var(--paper); }
+.header--inner .header__logo-col { width: 15%; display: flex; justify-content: center; }
+.header--inner .header__nav-col { width: 70%; }
+.header--inner .header__action-col { width: 15%; }
+@media (max-width: 1024px) {
+  .header--inner .header__logo-col { width: auto; flex: 1; justify-content: flex-start; }
+  .header--inner .header__action-col { width: auto; }
+}
+.header__inner {
+  max-width: 1720px; margin: 0 auto;
+  display: flex; align-items: center;
+}
+.header__logo-col { width: 20%; }
+.header__logo img { height: 34px; width: auto; }
+.header__nav-col { width: 60%; }
+.header__action-col { width: 20%; display: flex; justify-content: flex-end; }
+
+.nav { display: flex; justify-content: center; gap: 38px; }
+.nav__item { position: relative; }
+.nav__link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 16px; line-height: 1; color: var(--ink);
+  padding: 10px 0;
+}
+.nav__item--has-children > .nav__link::after {
+  content: '⌄'; font-size: 12px; transform: translateY(-2px);
+}
+.nav__sub {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
+  min-width: 210px; padding: 14px 0;
+  background: var(--paper); border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(18,18,18,.14);
+  opacity: 0; visibility: hidden; transition: opacity .28s ease, transform .28s ease, visibility .28s;
+}
+.nav__item:hover > .nav__sub,
+.nav__item:focus-within > .nav__sub {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.nav__sub a {
+  display: block; padding: 9px 22px; font-size: 15px; color: var(--muted);
+  transition: color .2s ease, background .2s ease;
+}
+.nav__sub a:hover { color: var(--ink); background: rgba(18,18,18,.04); }
+
+/* Header sits on the lime hero, so the pill button inverts for contrast */
+.header .btn--primary { padding: 16px 26px; }
+
+.header__burger { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; }
+.header__burger span { display: block; width: 22px; height: 1.5px; background: var(--ink); position: relative; }
+.header__burger span::before,
+.header__burger span::after { content: ''; position: absolute; left: 0; width: 22px; height: 1.5px; background: var(--ink); }
+.header__burger span::before { top: -7px; }
+.header__burger span::after  { top: 7px; }
+
+@media (max-width: 1200px) { .nav { gap: 24px; } .nav__link { font-size: 15px; } }
+@media (max-width: 1024px) {
+  .header__logo-col { width: auto; flex: 1; }
+  .header__nav-col { display: none; }
+  .header__action-col { width: auto; gap: 12px; align-items: center; }
+  .header__burger { display: flex; }
+
+  .header__nav-col.is-open {
+    display: block; position: absolute; top: 100%; left: 20px; right: 20px;
+    width: auto; background: var(--paper); border-radius: 18px; padding: 18px 8px;
+    box-shadow: 0 18px 48px rgba(18,18,18,.16);
+  }
+  .header__nav-col.is-open .nav { flex-direction: column; gap: 2px; }
+  .header__nav-col.is-open .nav__link { padding: 12px 18px; width: 100%; }
+  .header__nav-col.is-open .nav__sub {
+    position: static; transform: none; opacity: 1; visibility: visible;
+    box-shadow: none; padding: 0 0 8px 12px; min-width: 0; background: none;
+  }
+}
+@media (max-width: 767px) {
+  .header { padding: 20px 16px; }
+  .header .btn--primary { display: none; }
+}

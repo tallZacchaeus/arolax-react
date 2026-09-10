@@ -1,0 +1,23 @@
+{
+  "name": "arolax-react",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "fetch:video": "curl -sSL --http1.1 --retry 5 --retry-all-errors -C - -o public/assets/hero-video.mp4 https://crowdytheme.com/assets/wp-content/uploads/2024/06/arolux-branding-agency-video.mp4 && echo 'hero-video.mp4 downloaded'"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lenis": "^1.1.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
+}

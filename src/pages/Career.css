@@ -1,0 +1,29 @@
+.cr__intro { max-width: 900px; padding: 90px 0 60px; font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1.3em; color: var(--ink); }
+.cr__hiring { background: var(--sec-dark); color: var(--paper); border-radius: var(--sec-radius); padding: 90px 60px; }
+.cr__hiring-title { color: var(--paper); }
+.cr__roles { margin-top: 50px; }
+.cr__role {
+  display: grid; grid-template-columns: 60px 1fr auto auto; align-items: center; gap: 24px;
+  padding: 28px 0; border-top: 1px solid rgba(255,255,255,.14);
+}
+.cr__role:last-child { border-bottom: 1px solid rgba(255,255,255,.14); }
+.cr__role-n { font-size: 15px; color: var(--muted-2); }
+.cr__role-title { font-family: var(--font-display); font-weight: 400; font-size: 30px; color: var(--paper); }
+.cr__role-meta { font-size: 15px; color: var(--muted-2); }
+.cr__role-link { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--lime); border-bottom: 1px solid currentColor; }
+.cr__why { padding: 120px 0 150px; }
+.cr__why .page__lede { margin-top: 18px; }
+.cr__values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; margin-top: 60px; }
+.cr__value h3 { font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--ink); margin-bottom: 10px; }
+.cr__value p { font-size: 17px; line-height: 1.6em; color: var(--muted); }
+@media (max-width: 1024px) {
+  .cr__intro { font-size: 26px; }
+  .cr__hiring { padding: 64px 32px; border-radius: 40px; }
+  .cr__values { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .cr__hiring { padding: 48px 20px; border-radius: 28px; }
+  .cr__role { grid-template-columns: 40px 1fr; gap: 8px 16px; }
+  .cr__role-title { font-size: 22px; }
+  .cr__values { grid-template-columns: 1fr; gap: 32px; }
+}

@@ -1,0 +1,11 @@
+/* Inner pages: boxed 1290 (vs 1720 on the homepage), light ground,
+   top padding clears the absolute header. */
+.page { background: var(--paper); }
+.page__inner { max-width: 1290px; margin: 0 auto; padding: 0 20px; }
+.page__title {
+  font-family: var(--font-display); font-weight: 400;
+  color: var(--ink); line-height: 1em;
+}
+.page__lede { font-size: 18px; line-height: 1.55em; color: var(--muted); }
+
+@media (max-width: 1024px) { .page__inner { padding: 0 20px; } }

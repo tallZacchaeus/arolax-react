@@ -1,0 +1,17 @@
+.contact { display: grid; grid-template-columns: 360px 1fr; gap: 80px; padding-bottom: 150px; }
+.contact__label, .contact__heading { font-family: var(--font-display); font-weight: 400; color: var(--ink); }
+.contact__label { font-size: 24px; margin-bottom: 20px; }
+.contact__heading { font-size: 40px; line-height: 1.2em; margin-bottom: 36px; max-width: 620px; }
+.contact__line { display: block; font-size: 22px; color: var(--ink); margin-bottom: 10px; border-bottom: 1px solid rgba(18,18,18,.2); width: fit-content; }
+.contact__skype, .contact__addr { font-size: 17px; line-height: 1.5em; color: var(--muted); margin-top: 18px; max-width: 260px; }
+.contact__form { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.contact__row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; width: 100%; }
+.contact__field { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.contact__field span { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.contact__field input, .contact__field textarea {
+  font: inherit; font-size: 17px; color: var(--ink);
+  border: 0; border-bottom: 1px solid rgba(18,18,18,.2); background: none; padding: 12px 0; resize: vertical;
+}
+.contact__field input:focus, .contact__field textarea:focus { outline: none; border-color: var(--ink); }
+@media (max-width: 1024px) { .contact { grid-template-columns: 1fr; gap: 48px; } .contact__heading { font-size: 30px; } }
+@media (max-width: 767px) { .contact__row { grid-template-columns: 1fr; } .contact__line { font-size: 19px; } }

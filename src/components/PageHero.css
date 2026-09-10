@@ -1,0 +1,12 @@
+/* Shared inner-page opener: most nav pages start with a large title + lede.
+   Sizes follow the archive/single templates (100px display, 18-24px lede). */
+.phero { padding: 90px 0 70px; }
+.phero__eyebrow { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
+.phero__title { font-family: var(--font-display); font-weight: 400; font-size: 100px; line-height: 1.02em; color: var(--ink); }
+.phero__lede { margin-top: 28px; max-width: 640px; font-size: 20px; line-height: 1.55em; color: var(--muted); }
+.phero--dark { background: var(--sec-dark); border-radius: 0 0 var(--sec-radius) var(--sec-radius); padding: 110px 20px 90px; margin-top: -1px; }
+.phero--dark .phero__title { color: var(--paper); }
+.phero--dark .phero__lede { color: var(--muted-2); }
+.phero--dark .phero__eyebrow { color: var(--muted-2); }
+@media (max-width: 1024px) { .phero__title { font-size: 60px; } .phero__lede { font-size: 18px; } }
+@media (max-width: 767px)  { .phero { padding: 56px 0 40px; } .phero__title { font-size: 38px; } .phero--dark { border-radius: 0 0 32px 32px; padding: 72px 20px 56px; } }

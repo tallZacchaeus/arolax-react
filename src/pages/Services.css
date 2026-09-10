@@ -1,0 +1,41 @@
+.sv__list-wrap { padding: 60px 0 0; }
+.sv__list-wrap .page__lede { margin-top: 18px; }
+.sv__list { margin-top: 60px; border-top: 1px solid rgba(18,18,18,.12); }
+.sv__row {
+  display: grid; grid-template-columns: 70px 320px 1fr; align-items: baseline; gap: 24px;
+  padding: 34px 0; border-bottom: 1px solid rgba(18,18,18,.12);
+  transition: padding-left .35s ease;
+}
+.sv__row:hover { padding-left: 12px; }
+.sv__n { font-size: 15px; color: var(--muted); }
+.sv__title { font-family: var(--font-display); font-weight: 400; font-size: 34px; line-height: 1.2em; color: var(--ink); }
+.sv__text { font-size: 17px; line-height: 1.6em; color: var(--muted); max-width: 520px; }
+
+.sv__pitch { padding: 120px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.sv__pitch .page__lede { margin: 0; }
+
+.sv__pricing { padding-bottom: 120px; }
+.sv__plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+.sv__plan { border: 1px solid rgba(18,18,18,.14); border-radius: 20px; padding: 40px 34px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.sv__plan.is-featured { background: var(--sec-dark); border-color: transparent; }
+.sv__plan.is-featured .sv__plan-name,
+.sv__plan.is-featured .sv__plan-price { color: var(--paper); }
+.sv__plan.is-featured .sv__plan-items li { color: var(--muted-2); }
+.sv__plan.is-featured .btn--primary { background: var(--lime); color: var(--ink); }
+.sv__plan-name { font-family: var(--font-display); font-weight: 400; font-size: 22px; color: var(--ink); }
+.sv__plan-price { font-family: var(--font-display); font-weight: 400; font-size: 48px; line-height: 1; color: var(--ink); }
+.sv__plan-items { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 20px; }
+.sv__plan-items li { font-size: 16px; color: var(--muted); }
+
+.sv__brands { padding-bottom: 150px; }
+.sv__brands-label { font-size: 16px; color: var(--muted); margin-bottom: 28px; }
+.brand-strip { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+.brand-strip img { height: 34px; width: auto; opacity: .55; transition: opacity .3s ease; }
+.brand-strip img:hover { opacity: 1; }
+
+@media (max-width: 1024px) {
+  .sv__row { grid-template-columns: 50px 1fr; }
+  .sv__text { grid-column: 2; }
+  .sv__plans { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) { .sv__title { font-size: 24px; } .sv__pitch { padding: 72px 0; } .brand-strip { gap: 32px; } }

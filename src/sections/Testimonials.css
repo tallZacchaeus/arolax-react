@@ -1,0 +1,45 @@
+/* Section 7 — bg #F9F3EE, overlap -150 (deeper than the others).
+   Rating card 27.9% wide on #FDFAF8, radius 20, padding 60. */
+.testimonials { background: var(--sec-sand); margin-top: -150px; }
+.testimonials__title { max-width: 500px; }
+.testimonials__row {
+  display: grid; grid-template-columns: 27.9% 1fr;
+  gap: 40px; padding-top: 70px; align-items: stretch;
+}
+.rating-card {
+  background: var(--sec-sand-card); border-radius: 20px;
+  padding: 60px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 12px;
+}
+.rating-card__score {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 120px; line-height: .741em; color: var(--ink);
+}
+.rating-card__stars { font-size: 18px; letter-spacing: 3px; color: var(--ink); }
+.rating-card__meta { font-size: 18px; line-height: 1.222em; color: var(--muted); }
+
+.testimonials__quote {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 40px; line-height: 1.25em; color: var(--ink);
+  align-self: center;
+}
+.brand-slider {
+  display: flex; align-items: center; gap: 60px;
+  padding-top: 20px; flex-wrap: wrap;
+}
+.brand-slider img { height: 34px; width: auto; opacity: .55; transition: opacity .3s ease; }
+.brand-slider img:hover { opacity: 1; }
+@media (max-width: 1024px) {
+  .testimonials { margin-top: -100px; }
+  .testimonials__row { grid-template-columns: 1fr; }
+  .testimonials__quote { font-size: 30px; }
+  .rating-card { padding: 40px; }
+}
+@media (max-width: 767px) {
+  .testimonials { margin-top: -60px; }
+  .testimonials__row { padding-top: 36px; gap: 24px; }
+  .rating-card__score { font-size: 84px; }
+  .testimonials__quote { font-size: 24px; }
+  .brand-slider { gap: 32px; }
+}

@@ -1,0 +1,43 @@
+/* Section 9 — bg #FFFFFF. Head row: title 420px + "Read all posts".
+   wcf--posts settings: posts_per_page 3, thumb_height 400,
+   title 30px Instrument Sans 600 / 1.22em #121212,
+   taxonomy 14px Kanit uppercase #555555 (hover #121212), show_date yes. */
+.journal { background: var(--paper); }
+.journal__title { max-width: 420px; }
+.journal__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+.post { display: flex; flex-direction: column; gap: 20px; }
+.post__media {
+  display: block; overflow: hidden; border-radius: 20px;
+  height: 400px; background: var(--tint-grey);
+}
+.post__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.post:hover .post__media img { transform: scale(1.05); }
+
+.post__meta { display: flex; align-items: center; gap: 10px; }
+.post__cat {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 14px; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--muted); background: transparent;
+  transition: color .25s ease;
+}
+.post:hover .post__cat { color: var(--ink); }
+.post__date { font-size: 14px; color: var(--muted); }
+.post__date::before { content: '·'; margin-right: 10px; }
+
+.post__title {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 30px; line-height: 1.22em; color: var(--ink);
+}
+.post__more {
+  align-self: flex-start; font-size: 13px; letter-spacing: .06em;
+  text-transform: uppercase; border-bottom: 1px solid currentColor;
+}
+.journal__empty { font-size: 18px; color: var(--muted); }
+
+@media (max-width: 1024px) { .journal__grid { grid-template-columns: repeat(2, 1fr); } .post__media { height: 320px; } }
+@media (max-width: 767px)  {
+  .journal__grid { grid-template-columns: 1fr; gap: 28px; }
+  .post__media { height: 260px; }
+  .post__title { font-size: 24px; }
+}

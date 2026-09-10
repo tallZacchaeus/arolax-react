@@ -1,0 +1,24 @@
+/* Section 3 — bg #D9DCED, 865px lead paragraph, "150" at 450px. */
+.stats { background: var(--sec-stats); }
+.stats__lead { width: 865px; max-width: 100%; }
+.stats__copy {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 70px; line-height: 1.1em; color: var(--ink);
+}
+.stats__row {
+  width: 76.3%;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.stats__line { max-width: 30%; }
+.stats__figure-col { width: 62.8%; display: flex; justify-content: flex-end; }
+.stats__figure {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 450px; line-height: 1em; color: var(--ink);
+}
+@media (max-width: 1366px) {
+  .stats__copy { font-size: 56px; }
+  .stats__figure { font-size: 300px; }
+  .stats__row { width: 100%; }
+}
+@media (max-width: 1024px) { .stats__copy { font-size: 44px; } .stats__figure { font-size: 200px; } }
+@media (max-width: 767px)  { .stats__copy { font-size: 30px; } .stats__figure { font-size: 120px; } .stats__line { display: none; } }

@@ -1,0 +1,54 @@
+/* Design tokens extracted from the Arolax "Branding Agency" demo.
+   Sources: theme master.css :root vars, Elementor page data, computed styles. */
+:root {
+  /* Core palette (frequency-ranked from homepage Elementor data) */
+  --ink: #121212;          /* dominant dark ground */
+  --ink-soft: #1C1C1C;
+  --paper: #FFFFFF;
+  --lime: #BAE900;         /* hero accent */
+  --muted: #555555;
+  --muted-2: #999999;
+
+  /* Section grounds — exact values from each section's background_color */
+  --sec-stats: #D9DCED;    /* 3  StatsIntro */
+  --sec-dark: #121212;     /* 4  Services  */
+  --sec-dark-card: #1C1C1C;/* 4  service card */
+  --sec-mint: #D8E9E4;     /* 5  ProcessSteps + 10 CTAFooter */
+  --sec-sand: #F9F3EE;     /* 7  Testimonials */
+  --sec-sand-card: #FDFAF8;/* 7  rating card */
+  --sec-blush: #F4E0E0;    /* 8  Team */
+  --tint-grey: #EFEFEF;
+  --step-label: #7D8683;   /* 5  "Step - 01" */
+
+  /* Every section is a rounded card overlapping the one above it */
+  --sec-radius: 80px;
+  --sec-overlap: -100px;
+
+  /* Type.
+     The demo's own faces are NOT used here, deliberately — see FONTS.md:
+       Getaway        hero headline + closing CTA. No copyright, licence or
+                      foundry metadata in the file at all (built with Fontself);
+                      provenance unknown, so not safe to redistribute.
+       Beatrice Trial 107 uses across the inner pages. Sharp Type Co. TRIAL
+                      licence — evaluation only, explicitly not for production.
+     Both are substituted with Google Fonts (OFL, free to self-host or serve).
+     Swap --font-display for a licensed display face when you have one. */
+  --font-display: 'Kanit', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, sans-serif;
+  /* Stand-in for Getaway on the four mega-display moments it was used for
+     (hero headline, "Pro", and both closing-CTA lines). Getaway is a heavy
+     high-contrast display serif — NOT a geometric sans. DM Serif Display is
+     the closest OFL match measured: line width +2.9% vs Getaway at 100px
+     (929 -> 956), comparable weight and stroke contrast, single weight like
+     the original. Alternatives measured: Playfair +4.8%, Abril Fatface +8.4%,
+     Bodoni Moda +8.7%, Prata +14.3%, Fraunces -9.8%, Instrument Serif -21.5%. */
+  --font-hero: 'DM Serif Display', Georgia, serif;
+
+  /* Scale observed in the demo (px) */
+  --fs-xs: 16px;  --fs-sm: 18px;  --fs-md: 24px;  --fs-lg: 30px;
+  --fs-xl: 60px;  --fs-2xl: 70px; --fs-3xl: 120px;
+  --fs-display: 150px; --fs-mega: 300px; --fs-ultra: 450px;
+
+  --container: 1320px;
+  --gutter: clamp(16px, 4vw, 64px);
+}

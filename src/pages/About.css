@@ -1,0 +1,39 @@
+.ab__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 40px 0 100px; border-bottom: 1px solid rgba(18,18,18,.12); }
+.ab__stat-num { display: block; font-family: var(--font-display); font-weight: 400; font-size: 60px; line-height: 1.1; color: var(--ink); }
+.ab__stat-label { font-size: 16px; color: var(--muted); }
+.ab__eyebrow { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.ab__who { padding: 100px 0 0; }
+.ab__who .page__lede { margin-top: 22px; }
+.ab__pitch { padding: 100px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.ab__pitch .page__lede { margin: 0; }
+.ab__showcase { border-radius: var(--sec-radius); overflow: hidden; }
+.ab__showcase img { width: 100%; height: auto; display: block; }
+.ab__discipline { padding: 110px 0; }
+.ab__discipline p { max-width: 980px; font-family: var(--font-display); font-weight: 400; font-size: 56px; line-height: 1.15em; color: var(--ink); }
+
+.ab__quality { background: var(--sec-dark); color: var(--paper); border-radius: var(--sec-radius); padding: 110px 0; }
+.ab__quality-title { color: var(--paper); }
+.ab__quality-lede { margin-top: 18px; font-size: 18px; color: var(--muted-2); max-width: 520px; }
+.ab__team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
+.ab__member img { width: 100%; height: auto; border-radius: 16px; }
+.ab__member h3 { margin-top: 16px; font-family: var(--font-display); font-weight: 400; font-size: 22px; color: var(--paper); }
+.ab__member p { font-size: 15px; color: var(--muted-2); }
+
+.ab__cta { padding: 120px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.ab__cta-eyebrow { font-family: var(--font-display); font-weight: 400; font-size: 40px; line-height: 1.2em; color: var(--ink); }
+.ab__brands { padding-bottom: 150px; }
+.ab__brands-label { font-size: 16px; color: var(--muted); margin-bottom: 28px; }
+
+@media (max-width: 1024px) {
+  .ab__stats { grid-template-columns: 1fr 1fr; }
+  .ab__discipline p { font-size: 34px; }
+  .ab__team { grid-template-columns: repeat(2, 1fr); }
+  .ab__cta-eyebrow { font-size: 28px; }
+}
+@media (max-width: 767px) {
+  .ab__stat-num { font-size: 40px; }
+  .ab__discipline { padding: 72px 0; }
+  .ab__discipline p { font-size: 24px; }
+  .ab__quality { border-radius: 32px; padding: 72px 0; }
+  .ab__team { grid-template-columns: 1fr; }
+}

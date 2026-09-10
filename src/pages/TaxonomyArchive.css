@@ -1,0 +1,20 @@
+/* Template #6512 "Tags/Category Archive" — boxed 1290, padding 150/20.
+   wcf--blog--archive--title centred @60px/80px (750px wide) + arolax--posts. */
+.tax { padding: 150px 0 150px; }
+.tax__title {
+  max-width: 750px; margin: 0 auto;
+  text-align: center;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 60px; line-height: 80px; color: var(--ink);
+}
+.tax__count { text-align: center; margin-top: 12px; font-size: 18px; color: var(--muted); }
+.tax__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 80px; }
+@media (max-width: 1024px) {
+  .tax__title { font-size: 40px; line-height: 52px; }
+  .tax__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .tax { padding: 90px 0; }
+  .tax__title { font-size: 28px; line-height: 36px; }
+  .tax__grid { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
+}

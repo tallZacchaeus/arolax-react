@@ -1,0 +1,64 @@
+/* Template #558 "Footer Inner Page" — a CTA-led footer, distinct from #1354.
+   container: bg #171717, boxed 1290, padding 125/20
+   row 1 (boxed 1216): "Get started now" 100px #FFFFFF (610px)
+                       + lede 30px #999999 (830px)
+   row 2 (padding-top 80, row, align center):
+                       left 50%  → two 50% address columns (London / New York)
+                       right 50% → wcf--mailchimp signup */
+.footer-inner {
+  background: #171717; color: var(--paper);
+  border-radius: var(--sec-radius) var(--sec-radius) 0 0;
+  padding: 125px 20px 0;
+}
+.footer-inner__inner { max-width: 1290px; margin: 0 auto; }
+
+.footer-inner__cta { max-width: 1216px; }
+.footer-inner__title {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 100px; line-height: 1em; color: var(--paper);
+  max-width: 610px;
+}
+.footer-inner__lede {
+  margin-top: 28px; max-width: 830px;
+  font-size: 30px; line-height: 1.35em; color: var(--muted-2);
+}
+
+.footer-inner__row { display: flex; align-items: center; padding-top: 80px; gap: 40px; }
+.footer-inner__addresses { width: 50%; display: flex; }
+.footer-inner__addr { width: 50%; display: flex; flex-direction: column; gap: 10px; }
+.footer-inner__city { font-family: var(--font-display); font-weight: 400; font-size: 24px; color: var(--paper); }
+.footer-inner__lines { font-size: 16px; line-height: 1.5em; color: var(--muted-2); max-width: 220px; }
+
+.footer-inner__signup { width: 50%; }
+.footer-inner__label { font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted-2); }
+.footer-inner__form { display: flex; gap: 0; margin-top: 16px; border-bottom: 1px solid rgba(255,255,255,.28); }
+.footer-inner__form input {
+  flex: 1; background: none; border: 0; padding: 14px 0;
+  font: inherit; font-size: 18px; color: var(--paper);
+}
+.footer-inner__form input::placeholder { color: rgba(255,255,255,.42); }
+.footer-inner__form input:focus { outline: none; }
+.footer-inner__form button {
+  padding: 14px 4px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--paper);
+}
+
+.footer-inner__bottom {
+  margin-top: 90px; padding: 26px 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  text-align: center; font-size: 16px; color: var(--muted-2);
+}
+
+@media (max-width: 1024px) {
+  .footer-inner__title { font-size: 60px; }
+  .footer-inner__lede { font-size: 22px; }
+  .footer-inner__row { flex-direction: column; align-items: flex-start; gap: 48px; }
+  .footer-inner__addresses, .footer-inner__signup { width: 100%; }
+}
+@media (max-width: 767px) {
+  .footer-inner { padding-top: 72px; border-radius: 32px 32px 0 0; }
+  .footer-inner__title { font-size: 36px; }
+  .footer-inner__lede { font-size: 18px; }
+  .footer-inner__addresses { flex-direction: column; gap: 28px; }
+  .footer-inner__addr { width: 100%; }
+}
