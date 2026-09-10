@@ -4,7 +4,11 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "//": "Exclude /assets/ from the SPA fallback. Otherwise a missing asset returns index.html with a 200, and the immutable header below caches that HTML under the asset's URL for a year — which is exactly what happened to hero-video.mp4 while it was gitignored.",
+      "source": "/((?!assets/).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
