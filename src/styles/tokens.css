@@ -24,25 +24,19 @@
   --sec-radius: 80px;
   --sec-overlap: -100px;
 
-  /* Type.
-     The demo's own faces are NOT used here, deliberately — see FONTS.md:
-       Getaway        hero headline + closing CTA. No copyright, licence or
-                      foundry metadata in the file at all (built with Fontself);
-                      provenance unknown, so not safe to redistribute.
-       Beatrice Trial 107 uses across the inner pages. Sharp Type Co. TRIAL
-                      licence — evaluation only, explicitly not for production.
-     Both are substituted with Google Fonts (OFL, free to self-host or serve).
-     Swap --font-display for a licensed display face when you have one. */
+  /* Type — the demo's own faces, self-hosted (see fonts.css and FONTS.md).
+       Getaway         hero headline, "Pro", both closing-CTA lines (4 uses)
+       Beatrice Trial  inner-page display type (107 uses: titles, counters,
+                       icon-box and post titles)
+       Kanit           shared display face (212 uses)
+       Instrument Sans body copy
+     Getaway and Beatrice are gitignored: Beatrice is an evaluation-only cut
+     and Getaway carries no licence metadata, so neither is redistributed.
+     Each stack falls back to a Google face if the file is missing. */
   --font-display: 'Kanit', system-ui, sans-serif;
   --font-body: 'Instrument Sans', system-ui, sans-serif;
-  /* Stand-in for Getaway on the four mega-display moments it was used for
-     (hero headline, "Pro", and both closing-CTA lines). Getaway is a heavy
-     high-contrast display serif — NOT a geometric sans. DM Serif Display is
-     the closest OFL match measured: line width +2.9% vs Getaway at 100px
-     (929 -> 956), comparable weight and stroke contrast, single weight like
-     the original. Alternatives measured: Playfair +4.8%, Abril Fatface +8.4%,
-     Bodoni Moda +8.7%, Prata +14.3%, Fraunces -9.8%, Instrument Serif -21.5%. */
-  --font-hero: 'DM Serif Display', Georgia, serif;
+  --font-hero: 'Getaway', 'DM Serif Display', Georgia, serif;
+  --font-inner: 'Beatrice Trial', 'Kanit', system-ui, sans-serif;
 
   /* Scale observed in the demo (px) */
   --fs-xs: 16px;  --fs-sm: 18px;  --fs-md: 24px;  --fs-lg: 30px;

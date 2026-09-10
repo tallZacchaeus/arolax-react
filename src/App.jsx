@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './styles/fonts.css';
 import './styles/tokens.css';
 import './styles/base.css';
 import SiteLayout from './layout/SiteLayout';

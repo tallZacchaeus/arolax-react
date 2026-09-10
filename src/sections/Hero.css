@@ -23,7 +23,10 @@
 /* --- row 1: headline (75%) + video (25%) --- */
 .hero__row { display: flex; }
 .hero__headline-col { width: 75%; }
-.hero__headline-wrap { display: flex; width: 1160px; max-width: 100%; }
+/* Was flex to seat the demo's "Pro" badge beside the headline; that badge is
+   Arolax copy and is gone. Block avoids the h1 collapsing to min-content as a
+   flex item once SplitText replaces its text with line divs. */
+.hero__headline-wrap { width: 1160px; max-width: 100%; }
 
 .hero__headline {
   font-family: var(--font-hero);
@@ -34,14 +37,7 @@
   max-width: 100%;
   margin: 0;
 }
-/* "Pro" is a separate 60px title sitting beside the display line */
-.hero__pro {
-  font-family: var(--font-hero);
-  font-size: 60px; line-height: .667em;
-  text-align: center; align-self: flex-start;
-  width: 200px; padding: 37px 20px 33px;
-  font-style: normal;
-}
+
 
 .hero__video-col {
   width: 25%;
@@ -98,7 +94,6 @@
 @media (max-width: 880px) {
   .hero__headline-wrap { width: 380px; }
   .hero__headline { font-size: 44px; }
-  .hero__pro { font-size: 40px; width: 140px; padding: 20px 12px; }
   .hero__label-col { width: 35%; }
   .hero__lede-col { width: 65%; }
 }

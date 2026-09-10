@@ -7,3 +7,11 @@ dist
 # 12 MB blob is painful to remove from git later. Fetch it with:
 #   npm run fetch:video
 public/assets/hero-video.mp4
+
+# Demo fonts from the Arolax theme — self-hosted locally, never committed.
+#   Beatrice Trial  Sharp Type Co. TRIAL licence: evaluation only. Publishing
+#                   the files would be redistribution, not just use.
+#   Getaway         No copyright, licence or foundry metadata at all.
+# See FONTS.md. Copy them in from the WordPress uploads:
+#   wp-local/site/wp-content/uploads/2024/06/
+public/assets/fonts/

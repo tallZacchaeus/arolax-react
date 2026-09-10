@@ -25,9 +25,9 @@
 
 /* #7259 — in flow on inner pages: padding 29, columns 15/70/15 */
 .header--inner { position: relative; padding: 29px 20px; background: var(--paper); }
-.header--inner .header__logo-col { width: 15%; display: flex; justify-content: center; }
-.header--inner .header__nav-col { width: 70%; }
-.header--inner .header__action-col { width: 15%; }
+.header--inner .header__logo-col { width: 22%; display: flex; justify-content: flex-start; }
+.header--inner .header__nav-col { width: 56%; }
+.header--inner .header__action-col { width: 22%; }
 @media (max-width: 1024px) {
   .header--inner .header__logo-col { width: auto; flex: 1; justify-content: flex-start; }
   .header--inner .header__action-col { width: auto; }
@@ -75,7 +75,9 @@
 .nav__sub a:hover { color: var(--ink); background: rgba(18,18,18,.04); }
 
 /* Header sits on the lime hero, so the pill button inverts for contrast */
-.header .btn--primary { padding: 16px 26px; }
+/* "Start a Project" is longer than the demo's "Lets Talk", so keep it on one
+   line and give the inner variant's action column room for it. */
+.header .btn--primary { padding: 16px 26px; white-space: nowrap; }
 
 .header__burger { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; }
 .header__burger span { display: block; width: 22px; height: 1.5px; background: var(--ink); position: relative; }

@@ -2,10 +2,27 @@
    top padding clears the absolute header. */
 .page { background: var(--paper); }
 .page__inner { max-width: 1290px; margin: 0 auto; padding: 0 20px; }
+/* Inner pages use Beatrice Trial for display type, as the demo does. */
 .page__title {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-inner); font-weight: 400;
   color: var(--ink); line-height: 1em;
 }
 .page__lede { font-size: 18px; line-height: 1.55em; color: var(--muted); }
 
 @media (max-width: 1024px) { .page__inner { padding: 0 20px; } }
+
+/* The demo uses Beatrice Trial as the display face across inner pages
+   (47 uses on wcf--title, plus counters, icon-box and post titles), while the
+   homepage keeps Kanit. `.page` wraps every inner route, so scope it here
+   rather than repeating the token in each page's stylesheet. */
+.page .sec__title,
+.page .sv__block-title,
+.page .case__title,
+.page .topic__title,
+.page .wk__format-title,
+.page .ab__mv-item h3,
+.page .ab__value h3,
+.page .contact__label,
+.page .contact__heading {
+  font-family: var(--font-inner);
+}

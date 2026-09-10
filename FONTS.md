@@ -37,40 +37,46 @@ fashion face, *not* a geometric sans. Its OS/2 metrics (x-height 0.483em, cap
 0.734em, `H` advance 0.64em, weight 400, width class 5) do not reveal that;
 only rendering it does.
 
-## What this build uses instead
+## What this build uses  *(updated — the demo's own fonts are now in use)*
 
-| role | face | stands in for | licence |
+| token | face | where | licence |
 |---|---|---|---|
-| `--font-display` | **Kanit** | Kanit (the demo's own, 212 uses) | OFL |
-| `--font-body` | **Instrument Sans** | Instrument Sans (the demo's own) | OFL |
-| `--font-hero` | **DM Serif Display** | **Getaway** | OFL |
+| `--font-hero` | **Getaway** | hero headline, both CTA lines, wordmarks | unknown — see below |
+| `--font-inner` | **Beatrice Trial** | inner-page display type | Sharp Type TRIAL |
+| `--font-display` | **Kanit** | homepage section titles | OFL |
+| `--font-body` | **Instrument Sans** | body copy | OFL |
 
-Kanit and Instrument Sans are not substitutions — they are what the demo uses.
-`--font-hero` is the substitution, applied to exactly the four places Getaway
-was used: `.hero__headline`, `.hero__pro`, `.cta__eyebrow`, `.cta__line`.
+Getaway and Beatrice are **self-hosted** from `public/assets/fonts/`, declared
+in `src/styles/fonts.css`. Weights match the demo: Getaway 400, Beatrice 400
+and 500.
 
-### Why DM Serif Display
+### These font files are gitignored
 
-Measured against Getaway, same string at 100px:
+`public/assets/fonts/` is excluded from git. Using a trial font locally is one
+thing; committing it to a public repository is redistribution, which is the
+part a foundry actually pursues. The files stay on disk and in any build you
+deploy, but never enter version control.
 
-| face | line width | vs Getaway |
-|---|---|---|
-| Getaway | 929px | — |
-| **DM Serif Display** | 956px | **+2.9%** |
-| Playfair Display | 974px | +4.8% |
-| Abril Fatface | 1007px | +8.4% |
-| Bodoni Moda | 1010px | +8.7% |
-| Prata | 1062px | +14.3% |
-| Fraunces (opsz 144) | 838px | −9.8% |
-| Instrument Serif | 729px | −21.5% |
+Copy them in from the WordPress install:
 
-DM Serif Display is closest on width, comparable in weight and stroke contrast,
-and single-weight like the original — so it drops in without reflowing the
-hero's line breaks.
+```bash
+mkdir -p public/assets/fonts
+cd ../wp-local/site/wp-content/uploads/2024/06
+cp getaway.otf               ../../../../../arolax-react/public/assets/fonts/Getaway-Regular.otf
+cp BeatriceTRIAL-Regular.ttf ../../../../../arolax-react/public/assets/fonts/BeatriceTrial-Regular.ttf
+cp BeatriceTRIAL-Medium.ttf  ../../../../../arolax-react/public/assets/fonts/BeatriceTrial-Medium.ttf
+```
 
-**Beatrice Trial is still substituted by Kanit** on the inner pages. Given the
-trial licence blocks production use either way, matching it was not worth
-pursuing; pick a licensed text face when you choose one.
+Each `font-family` stack falls back to Kanit or DM Serif Display, so a checkout
+without the files renders readable rather than broken.
+
+### The licence position has not changed
+
+Using these faces on a public Brandfirst Media site still carries the risk
+described above: Beatrice Trial is an evaluation cut, and Getaway's provenance
+is unknown. Buying a Beatrice web licence from Sharp Type clears half of it;
+identifying Getaway's foundry clears the other half. That is a decision for the
+client, made knowingly.
 
 ## If you want the demo's exact type
 
