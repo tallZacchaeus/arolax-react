@@ -9,5 +9,4 @@ dist
 #   Getaway         No copyright, licence or foundry metadata at all.
 # See FONTS.md. Copy them in from the WordPress uploads:
 #   wp-local/site/wp-content/uploads/2024/06/
-public/assets/fonts/
 .vercel

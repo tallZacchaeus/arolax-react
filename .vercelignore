@@ -4,4 +4,3 @@ dist
 
 # Trial/unlicensed fonts are not published. The site falls back to Kanit and
 # DM Serif Display on the deployed build — see FONTS.md.
-public/assets/fonts
