@@ -23,6 +23,9 @@ export const site = {
 
 export const home = {
   hero: {
+    // Two explicit lines. Natural wrapping broke to three at common laptop
+    // widths and two on wide screens, so the balanced split is fixed here.
+    headlineLines: ['Putting Your Brand First', 'in Every Media Decision'],
     headline: 'Putting Your Brand First in Every Media Decision',
     sub: 'Brandfirst Media helps businesses and organizations plan, create, deliver, and measure strategic campaigns across traditional and digital media.',
     primary: { label: 'Start a Project', href: '/contact' },

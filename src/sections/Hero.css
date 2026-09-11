@@ -27,11 +27,18 @@
    Arolax copy and is gone. Block avoids the h1 collapsing to min-content as a
    flex item once SplitText replaces its text with line divs. */
 .hero__headline-wrap { width: 1160px; max-width: 100%; }
+/* Block on desktop to hold the balanced two-line split; inline below the
+   mobile breakpoint so the headline reflows evenly instead of leaving an
+   orphan word from the forced break. */
+.hero__line { display: block; }
 
 .hero__headline {
   font-family: var(--font-hero);
   font-weight: 400;
-  font-size: 104px;
+  /* Fluid so the longer line ("Putting Your Brand First", 985px per 100px in
+     Getaway) always fits the 75% headline column without reflowing to three
+     lines. Capped at 108px. */
+  font-size: clamp(34px, 7vw, 108px);
   line-height: 1.02em;
   color: var(--ink);
   max-width: 100%;
@@ -68,7 +75,6 @@
   .hero__inner { row-gap: 95px; }
   .hero__headline-col { width: 67%; }
   .hero__headline-wrap { width: 760px; }
-  .hero__headline { font-size: 78px; }
   .hero__video-col { width: 33%; }
   .hero__video { width: 400px; }
   .hero__label-col { width: 40%; }
@@ -78,14 +84,12 @@
 @media (max-width: 1200px) {
   .hero__headline-col { width: 60%; }
   .hero__headline-wrap { width: 592px; }
-  .hero__headline { font-size: 64px; }
   .hero__video-col { width: 40%; }
   .hero__video { width: 365px; }
 }
 @media (max-width: 1024px) {
   .hero__headline-col { width: 58%; }
   .hero__headline-wrap { width: 480px; }
-  .hero__headline { font-size: 52px; }
   .hero__video-col { width: 42%; }
   .hero__label-col { width: 33%; }
   .hero__lede-col { width: 67%; }
@@ -93,17 +97,16 @@
 }
 @media (max-width: 880px) {
   .hero__headline-wrap { width: 380px; }
-  .hero__headline { font-size: 44px; }
   .hero__label-col { width: 35%; }
   .hero__lede-col { width: 65%; }
 }
 @media (max-width: 767px) {
+  .hero__line { display: inline; }
   .hero { padding: 110px 20px 120px; }
   .hero__inner { row-gap: 56px; }
   .hero__row, .hero__row--foot { flex-direction: column; }
   .hero__headline-col, .hero__video-col, .hero__label-col, .hero__lede-col { width: 100%; }
   .hero__headline-wrap { width: 100%; }
-  .hero__headline { font-size: 36px; }
   .hero__video-col { justify-content: flex-start; padding-top: 40px; }
   .hero__lede { font-size: 32px; }
   .hero__lede-col { row-gap: 32px; margin-top: 40px; }

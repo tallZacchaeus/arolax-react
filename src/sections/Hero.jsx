@@ -18,7 +18,11 @@ export default function Hero() {
         <div className="hero__row">
           <div className="hero__headline-col">
             <div className="hero__headline-wrap">
-              <h1 ref={headline} className="hero__headline">{hero.headline}</h1>
+              <h1 ref={headline} className="hero__headline">
+                {hero.headlineLines.map((line) => (
+                  <span key={line} className="hero__line">{line}{' '}</span>
+                ))}
+              </h1>
             </div>
           </div>
           <div className="hero__video-col">
