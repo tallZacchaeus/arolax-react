@@ -62,9 +62,9 @@ Copy them in from the WordPress install:
 ```bash
 mkdir -p public/assets/fonts
 cd ../wp-local/site/wp-content/uploads/2024/06
-cp getaway.otf               ../../../../../arolax-react/public/assets/fonts/Getaway-Regular.otf
-cp BeatriceTRIAL-Regular.ttf ../../../../../arolax-react/public/assets/fonts/BeatriceTrial-Regular.ttf
-cp BeatriceTRIAL-Medium.ttf  ../../../../../arolax-react/public/assets/fonts/BeatriceTrial-Medium.ttf
+cp getaway.otf               ../../../../../brandfirst-media/public/assets/fonts/Getaway-Regular.otf
+cp BeatriceTRIAL-Regular.ttf ../../../../../brandfirst-media/public/assets/fonts/BeatriceTrial-Regular.ttf
+cp BeatriceTRIAL-Medium.ttf  ../../../../../brandfirst-media/public/assets/fonts/BeatriceTrial-Medium.ttf
 ```
 
 Each `font-family` stack falls back to Kanit or DM Serif Display, so a checkout
